@@ -74,12 +74,12 @@ class NavBar extends Component {
                 <nav>
                     <label className="LeftLabel">
                         <ul>
-                            <li><h3>Toggle View</h3></li>
+                            <h3><i>Toggle View</i></h3>
                             <li>
                                 <figure>
                                     <img
                                         style={{
-                                            transform: this.state.id === "line" ? "scale(1.4)" : "scale(1)"
+                                            transform: this.state.id === "line" ? "scale(1.2)" : "scale(0.9)"
                                         }}
                                         onClick={this.handleClickLeft} id="line" src={v1} alt="" />
                                 </figure>
@@ -90,21 +90,23 @@ class NavBar extends Component {
                             <li>
                                 <figure>
                                     <img
-                                        style={{ transform: this.state.id === "pie" ? "scale(1.4)" : "scale(1)" }}
+                                        style={{ transform: this.state.id === "pie" ? "scale(1.2)" : "scale(0.9)" }}
                                         onClick={this.handleClickLeft} id="pie" src={v2} alt="" />
                                 </figure>
                             </li>
                         </ul>
                     </label>
                     <label className="logo"> <img src={nitiLogo} style={{
-                        height: "90px",
-                        paddingRight: "20px",
-                        marginLeft: "200px",
-                        marginTop: "5px"
+                        height: "95px",
+                        marginLeft:"50px"
+
+
+
                     }} /></label>
                     {/*<label className="logo">Niti Aayog Dashboard</label>*/}
                     <label className="RightLabel">
                         <ul>
+                            <br/>
                             <li>
                                 <figure>
                                     <img style={{ paddingLeft: "15px" }} src={e1} alt=""
@@ -113,28 +115,29 @@ class NavBar extends Component {
                             </li>
                             <li>
                                 <figure>
-                                    <img style={{ paddingLeft: "15px", paddingRight: "15px" }} src={e2} alt="" />
+                                    <img style={{ paddingLeft: "15px"}} src={e2} alt="" />
                                 </figure>
                             </li>
                             <li>
 
                                 {/*<Link to="/IndiaMap" target="_blank"><img style={{paddingLeft: "15px"}} src={e3}*/}
                                 {/*                                          alt=""/></Link>*/}
+                                <figure>
                                 <button style={{ border: "0px" }} onClick={this.handlePopUp}>
                                     <img style={{ paddingLeft: "15px" }} src={e3} alt="" />
                                 </button>
                                 <IndiaMapPopup trigger={this.state.popUpTrigger}
                                     sideBarHandler={this.state.sideBarHandler}>
-                                </IndiaMapPopup>
+                                </IndiaMapPopup></figure>
 
                             </li>
                             <li>
-                                
+                                <figure>
                                 <button style={{ border: "0px" }} onClick={this.handlerRegisterPopUp}>
                                     <img style={{ paddingLeft: "15px" }} src={e4} alt="" />
                                 </button>
                                     <Popup trigger={this.state.registerPopUpTrigger} sideBarHandler={this.state.sideBarHandler}>
-                                    </Popup>
+                                    </Popup></figure>
                                
                             </li>
                         </ul>

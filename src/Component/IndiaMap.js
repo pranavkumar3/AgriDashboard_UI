@@ -121,7 +121,7 @@ function IndiaMap({...rest}) {
                 <Geographies geography={INDIA_TOPO_JSON}>
                     {({geographies}) =>
                         geographies.map(geo => {
-                            //console.log(geo.id);
+                            console.log(geo.value);
                             const current = data.find(s => s.id === geo.id);
                             return (
                                 <Geography

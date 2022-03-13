@@ -61,9 +61,8 @@ class GenerateCharts extends Component {
             }
         }
 
-        statesForLineChart.push(this.state.dataset.result[0].StateName);
-        statesForLineChart.push(this.state.dataset.result[1].StateName);
-        statesForLineChart.push(this.state.dataset.result[2].StateName);
+        statesForLineChart.push(this.state.dataset.result[0].StateName)
+        console.log(this.state.dataset.result[1].StateName)
 
         this.setState({
                 isLoading: false,
@@ -114,17 +113,21 @@ class GenerateCharts extends Component {
 
                     tempData.push(obj[currYear])
                     if (i === 0) {
-                        let color = this.getRandomColor(); //this.findValueOfProperty(this.state.colorCoding, obj.StateName)
+                        let color = this.getRandomColor();
+
+
+                         //this.findValueOfProperty(this.state.colorCoding, obj.StateName)
                         chartColors.push(color)
 
                         labelMap[obj.StateName] = color;
+
                     }
                     labels.push(obj.StateName)
                 }
 
 
                 new Chart(ctx, {
-                    type: "pie",
+                    type: "doughnut",
                     options: {
                         legend: {
                             display: false
@@ -183,6 +186,7 @@ class GenerateCharts extends Component {
                             data: datasets[0],
                             borderColor: 'rgb(75, 192, 192)',
                         },
+
                         {
                             label: this.state.statesForLineChart[1],
                             data: datasets[1],
