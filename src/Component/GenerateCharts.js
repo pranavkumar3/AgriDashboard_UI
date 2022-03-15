@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import "../App.css";
 import {Chart} from "react-chartjs-2";
 
+
 class GenerateCharts extends Component {
 
     constructor(props) {
@@ -279,6 +280,7 @@ class GenerateCharts extends Component {
 
         let content = this.state.dataset.result.map(
             (details, index) =>
+
                 <tr key={index}>
                     <td
                         style={{
@@ -294,7 +296,7 @@ class GenerateCharts extends Component {
                         {details.StateName}</td>
                     {this.state.years.map(
                         (year, index1) =>
-                            <td key={index1}>{details[year]}</td>
+                            <td key={index1}><input placeholder={details[year]} defaultValue={details[year]} style={{border: 'none',background:'transparent'}}/></td>
                     )}
                 </tr>
         )

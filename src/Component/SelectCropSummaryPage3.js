@@ -120,7 +120,7 @@ class SelectCropSummaryPage3 extends Component {
         let presentStates = this.state.cropStatesForLineChart;
         if (presentStates.includes(id)) presentStates.splice(presentStates.indexOf(id), 1);
         else {
-            if (presentStates.length === 3) presentStates.shift();
+            if (presentStates.length === 9) presentStates.shift();
             presentStates.push(id);
         }
         this.setState({
@@ -203,7 +203,7 @@ class SelectCropSummaryPage3 extends Component {
             <div className="SummaryLineChart3">
                 <h2 style={{marginBottom: "1%", marginLeft: "2%"}}>Summary</h2>
                 <h3 style={{marginLeft: "2%"}}>Choose Crop for comparison</h3>
-                <h5 style={{marginLeft: "2%"}}>(Select At max 3 states)</h5>
+                <h5 style={{marginLeft: "2%"}}>(You Can Select Multiple states)</h5>
                 <div className="container">
                 <div
                     className="cropList one">

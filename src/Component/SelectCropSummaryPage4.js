@@ -94,7 +94,7 @@ class SelectCropSummaryPage4 extends Component {
                 }
             }
             new Chart(ctx, {
-                type: 'line',
+                type: 'pie',
                 data: {
                     labels: this.state.yearsForRainfall,
                     datasets: [
@@ -112,7 +112,43 @@ class SelectCropSummaryPage4 extends Component {
                             label: this.state.rainfallStatesForLineChart[2],
                             data: datasets[2],
                             borderColor: 'rgb(100,46,201)',
+                        },
+                        {
+                            label: this.state.rainfallStatesForLineChart[3],
+                            data: datasets[3],
+                            borderColor: 'rgb(62,201,46)',
+                        },
+                        {
+                            label: this.state.rainfallStatesForLineChart[4],
+                            data: datasets[4],
+                            borderColor: 'rgb(201,46,46)',
+                        },
+                        {
+                            label: this.state.rainfallStatesForLineChart[5],
+                            data: datasets[2],
+                            borderColor: 'rgb(241,186,3)',
+                        },
+                        {
+                            label: this.state.rainfallStatesForLineChart[6],
+                            data: datasets[5],
+                            borderColor: 'rgb(237,156,250)',
+                        },
+                        {
+                            label: this.state.rainfallStatesForLineChart[7],
+                            data: datasets[6],
+                            borderColor: 'rgb(96,29,5)',
+                        },
+                        {
+                            label: this.state.rainfallStatesForLineChart[8],
+                            data: datasets[7],
+                            borderColor: 'rgb(10,246,104)',
+                        },
+                        {
+                            label: this.state.rainfallStatesForLineChart[9],
+                            data: datasets[8],
+                            borderColor: 'rgb(252,7,174)',
                         }
+
                     ],
                 },
                 options: {
@@ -177,13 +213,45 @@ class SelectCropSummaryPage4 extends Component {
                         {
                             label: this.state.cropStatesForLineChart[1],
                             data: datasets[1],
-                            borderColor: 'rgb(45,63,36)',
+                            borderColor: 'rgb(239,9,106)',
                         },
                         {
                             label: this.state.cropStatesForLineChart[2],
                             data: datasets[2],
-                            borderColor: 'rgb(100,46,201)',
+                            borderColor: 'rgb(250,2,11)',
+                        },
+                        {
+                            label: this.state.cropStatesForLineChart[3],
+                            data: datasets[3],
+                            borderColor: 'rgb(252,172,1)',
+                        },
+                        {
+                            label: this.state.cropStatesForLineChart[4],
+                            data: datasets[4],
+                            borderColor: 'rgb(132,236,6)',
+                        },
+                        {
+                            label: this.state.cropStatesForLineChart[5],
+                            data: datasets[5],
+                            borderColor: 'rgb(20,91,1)',
+                        },
+                        {
+                            label: this.state.cropStatesForLineChart[6],
+                            data: datasets[6],
+                            borderColor: 'rgb(113,133,255)',
+                        },
+                        {
+                            label: this.state.cropStatesForLineChart[7],
+                            data: datasets[7],
+                            borderColor: 'rgb(246,113,3)',
+                        },
+
+                        {
+                            label: this.state.cropStatesForLineChart[8],
+                            data: datasets[8],
+                            borderColor: 'rgb(45,63,36)',
                         }
+
                     ],
                 },
                 options: {
@@ -237,14 +305,7 @@ class SelectCropSummaryPage4 extends Component {
         return (
             <div>
                 <h2 style={{marginBottom: "1%"}}>Summary</h2>
-                <div className="Graph">
-                    <canvas
-                        id={"LineChartForRainfall"}
-                        width="20%"
-                        height="4%"
-                    />
-                </div>
-                <h2 style={{textAlign: "center"}}> Rain fall in {rainfallStates}</h2>
+
                 <div className="Graph">
                     <canvas
                         id={"LineChartForCrop"}

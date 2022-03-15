@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {Chart} from "react-chartjs-2";
 import {withRouter} from "react-router-dom";
 import LoadingPage from "./LoadingPage";
-import {useHistory} from "react-router-dom";
+
 
 class SummaryPage2 extends Component {
 
@@ -79,7 +79,32 @@ class SummaryPage2 extends Component {
                             label: this.state.statesForLineChart[2],
                             data: datasets[2],
                             borderColor: 'rgb(100,46,201)',
-                        }
+                        },
+                        {
+                            label: this.state.statesForLineChart[3],
+                            data: datasets[3],
+                            borderColor: 'rgb(239,131,6)',
+                        },
+                        {
+                            label: this.state.statesForLineChart[4],
+                            data: datasets[4],
+                            borderColor: 'rgb(103,239,12)',
+                        },
+                        {
+                            label: this.state.statesForLineChart[5],
+                            data: datasets[5],
+                            borderColor: 'rgb(252,193,1)',
+                        },
+                        {
+                            label: this.state.statesForLineChart[6],
+                            data: datasets[6],
+                            borderColor: 'rgb(6,250,214)',
+                        },
+                        {
+                            label: this.state.statesForLineChart[7],
+                            data: datasets[7],
+                            borderColor: 'rgb(2,2,2)',
+                        },
                     ],
                 },
                 options: {
@@ -150,11 +175,15 @@ class SummaryPage2 extends Component {
                         height="4%"
                     />
                 </div>
-                <div style={{position: "absolute", left: "35%", textAlign: "center"}}>
-                    <h2>Rain fall in {states}</h2>
-                    <button className="registerButton" onClick={this.handleBackButton}>Back</button>
-                    <button className="registerButton" onClick={this.handleButtonClick}>Next</button>
+                <div style={{position: "absolute", left: "20%"}}>
+                    <h2>Rainfall in {states}</h2>
+
                 </div>
+
+                    <div style={{position: "absolute", left: "25%"}}>
+                        <br></br>  <br></br>  <br></br>   <br></br>  <br></br>  <br></br>
+                <button className="registerButton" onClick={this.handleBackButton}>Back</button>
+                <button className="registerButton" onClick={this.handleButtonClick}>Next</button></div>
             </div>
         )
     }

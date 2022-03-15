@@ -16,18 +16,18 @@ const PROJECTION_CONFIG = {
 
 // Red Variants
 const COLOR_RANGE = [
-    '#ffffff',
-    '#ccffc5',
-    '#caff9f',
+    'rgba(229,178,101,0.99)',
+    '#8dbece',
+    '#ad93cb',
     '#c8ff75',
     '#33ff55',
-    '#25b873',
-    '#1fad50',
-    '#177b19',
-    '#083f14'
+    '#f1887e',
+    '#85f8ad',
+    '#d59e91',
+    '#9a6157'
 ];
 
-const DEFAULT_COLOR = '#EEE';
+const DEFAULT_COLOR = '#dc97c6';
 
 const getRandomInt = () => {
     return parseInt(Math.random() * 100);

@@ -79,7 +79,7 @@ class Summary extends Component {
         let presentStates = this.state.statesForLineChart;
         if (presentStates.includes(id)) presentStates.splice(presentStates.indexOf(id), 1);
         else {
-            if (presentStates.length === 3) presentStates.shift();
+            if (presentStates.length === 9) presentStates.shift();
             presentStates.push(id);
         }
         this.setState({
@@ -132,7 +132,7 @@ class Summary extends Component {
             <div className="SummaryLineChart">
                 <h2 style={{marginBottom: "1%"}}>Summary</h2>
                 <h3>Choose Crop for comparison</h3>
-                <h5>(Select At max 3 states)</h5>
+                <h5>(You Can Select Multiple States)</h5>
 
                 <div style={{overflow: "scroll", width: "77%", height: "500px"}}>
                     <div className="Tables">
