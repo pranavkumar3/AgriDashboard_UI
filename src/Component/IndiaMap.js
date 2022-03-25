@@ -6,6 +6,7 @@ import ReactTooltip from 'react-tooltip';
 import LinearGradient from './LinearGradient.js';
 import '../App.css';
 import {withRouter} from "react-router-dom";
+import LandingPage from "./LandingPage.js";
 
 const INDIA_TOPO_JSON = require('../Utility/india.topo.json');
 
@@ -43,7 +44,8 @@ const geographyStyle = {
         outline: 'none'
     },
     pressed: {
-        outline: 'none'
+        outline: 'none',
+        fill: '#960505'
     }
 };
 
@@ -90,9 +92,105 @@ const getHeatMapData = () => {
         {id: 'PY', state: 'Puducherry', value: getRandomInt()}
     ];
 };
+/*
+tableRowStatesHandleClick(event) {
+    if(this.state.viewType=='pie') return;
+    const id = event.target.id;
+    let presentStates = this.state.statesForLineChart;
+    if (presentStates.includes(id)) presentStates.splice(presentStates.indexOf(id), 1);
+    else {
+        if (presentStates.length === 3) presentStates.shift();
+        presentStates.push(id);
+    }
+    this.setState({
+        statesForLineChart: presentStates
+    }, () => this.createChart())
+}
+
+        let content = this.state.dataset.result.map(
+            (details, index) =>
+
+                <tr key={index}>
+                    <td
+                        style={{
+                            backgroundColor:
+                                this.state.statesForLineChart.includes(details.StateName)
+                                && this.state.viewType === "line"? "#1e621c" : "#009879",
+                            color: "#ffffff"
+                        }}
+                        onClick={this.tableRowStatesHandleClick}////////////
+                        id={details.StateName}
+                    >
+                        {details.StateName}</td>
+                    {this.state.years.map(
+                        (year, index1) =>
+                            <td key={index1}><input placeholder={details[year]} defaultValue={details[year]} style={{border: 'none',background:'transparent'}}/></td>
+                    )}
+                </tr>
+        )
+
+ tableRowStatesHandleClick(event) {
+     const id = event.target.id;
+     let presentStates = this.state.cropStatesForLineChart;
+     if (presentStates.includes(id)) presentStates.splice(presentStates.indexOf(id), 1);
+     else {
+         if (presentStates.length === 9) presentStates.shift();
+         presentStates.push(id);
+     }
+     this.setState({
+         cropStatesForLineChart: presentStates
+     })
+ }
+
+
+
+*/
+ //p
+//  mapStateSelector(event) {
+//      const id = event.target.id;
+//      let presentStates = this.state.cropStatesForLineChart;
+//      if (presentStates.includes(id)) presentStates.splice(presentStates.indexOf(id), 1);
+//      else {
+//          if (presentStates.length === 9) presentStates.shift();
+//          presentStates.push(id);
+//      }
+//      this.setState({
+//          cropStatesForLineChart: presentStates
+//      })
+//  }
+//p
+
+// const handleClick = (geo) => {
+//     console.log("STATE: ",geo.id);
+//     <LandingPage selectedState={geo.id}/>
+//     // setClickedCity(geo.properties.name);
+//     // dispatcher(getState({ value: geo.properties.name }));
+//     // history.push({
+//     //   pathname: "/issues",
+//     //   state: { states: geo.properties.name },
+//     // });
+//   };
 
 function IndiaMap({...rest}) {
 
+
+    const [state, setstate] = useState({data:""})
+  
+
+    const func = (geo) => 
+    {
+        console.log(geo.id);
+    }
+    // const changeState = (geo) => {  
+    //     // var k=2;
+    //     // <LandingPage pl={2}/>
+    //     // setstate({data:`state/props of parent component 
+    //     // is send by onClick event to another component`}); 
+    //     setstate({data:`state/props of parent component 
+    //     is send by onClick event to another component`}); 
+    //     console.log(geo.id)
+    
+    // }; 
     const [tooltipContent, setTooltipContent] = useState('');
     const [data, setData] = useState(getHeatMapData());
 
@@ -103,13 +201,20 @@ function IndiaMap({...rest}) {
         max: data.reduce((max, item) => (item.value > max ? item.value : max), 0)
     };
 
+
+
     const colorScale = scaleQuantile()
         .domain(data.map(d => d.value))
         .range(COLOR_RANGE);
 
     return (
+        
         <div className="full-width-height container">
+            {/* <LandingPage data={state.data}/> */}
+
+
             <h1 className="no-margin center">States and UTs</h1>
+
             <ReactTooltip>{tooltipContent}</ReactTooltip>
             <ComposableMap
                 projectionConfig={PROJECTION_CONFIG}
@@ -121,15 +226,23 @@ function IndiaMap({...rest}) {
                 <Geographies geography={INDIA_TOPO_JSON}>
                     {({geographies}) =>
                         geographies.map(geo => {
-                            console.log(geo.value);
                             const current = data.find(s => s.id === geo.id);
-                            return (
-                                <Geography
+
+
+                            return (//TODO
+                            
+                            <Geography
+                            
                                     key={geo.rsmKey}
                                     geography={geo}
+                                    onClick={func(geo)}
+
+                                    // onClick={console.log("YO ",geo.id)}
+                                    // onClick={changeState(geo)}
                                     fill={current ? colorScale(current.value) : DEFAULT_COLOR}
                                     style={geographyStyle}
                                 />
+            
                             );
                         })
                     }

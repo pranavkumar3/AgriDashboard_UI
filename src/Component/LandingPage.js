@@ -108,17 +108,26 @@ class LandingPage extends Component {
     }
 
     render() {
-
+        // const { selectedState } = this.props.location
+        // {console.log(this.props.data)}
+        // console.log("SATE SELECTED IS:",selectedState)
         if (this.state.isLoading) {
+            
             return (
+                
                 <LoadingPage/>
+                
             )
         }
 
         return (
+            
             <div className="LandingPage">
+
+
                 <NavBar
                     toggleViewHandler={this.handleClickForToggleView}
+                    // onClick={() =>   console.log(selectedState)}                    
                     sideBarHandler={this.handleSideBarForPopUp}
                     dataset={this.state.request}/>
 

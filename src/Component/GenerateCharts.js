@@ -63,7 +63,7 @@ class GenerateCharts extends Component {
         }
 
         statesForLineChart.push(this.state.dataset.result[0].StateName)
-        console.log(this.state.dataset.result[1].StateName)
+        // console.log(this.state.dataset.result[1].StateName)
 
         this.setState({
                 isLoading: false,
@@ -263,7 +263,6 @@ class GenerateCharts extends Component {
                 <div/>
             )
         }
-
         let years = this.state.years.map(
             (year, index) =>
                 <th
@@ -277,6 +276,7 @@ class GenerateCharts extends Component {
                     id={year}
                 >{year}</th>
         )
+///////////////////////////////////////////////////////////
 
         let content = this.state.dataset.result.map(
             (details, index) =>
@@ -286,11 +286,10 @@ class GenerateCharts extends Component {
                         style={{
                             backgroundColor:
                                 this.state.statesForLineChart.includes(details.StateName)
-                                && this.state.viewType === "line"
-                                    ? "#1e621c" : "#009879",
+                                && this.state.viewType === "line"? "#1e621c" : "#009879",
                             color: "#ffffff"
                         }}
-                        onClick={this.tableRowStatesHandleClick}
+                        onClick={this.tableRowStatesHandleClick}////////////
                         id={details.StateName}
                     >
                         {details.StateName}</td>

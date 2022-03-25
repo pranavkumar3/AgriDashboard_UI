@@ -114,7 +114,7 @@ class SelectCropSummaryPage3 extends Component {
             isLoading: true
         }, () => this.processData())
     }
-
+/////////////////////
     tableRowStatesHandleClick(event) {
         const id = event.target.id;
         let presentStates = this.state.cropStatesForLineChart;
