@@ -10,7 +10,7 @@ import SummaryPage2 from "./Component/SummaryPage2";
 import SelectCropSummaryPage3 from "./Component/SelectCropSummaryPage3";
 import SelectCropSummaryPage4 from "./Component/SelectCropSummaryPage4";
 import LandingPage from "./Component/LandingPage";
-
+import Summarypage3 from "./Component/Summarypage3";
 
 class App extends Component {
 
@@ -33,6 +33,8 @@ class App extends Component {
                     <Route exact path='/Summary' component={Summary}>
                     </Route>
                     <Route exact path='/SummaryPage2' component={SummaryPage2}>
+                    </Route>
+                    <Route exact path='/Summarypage3' component={Summarypage3}>
                     </Route>
                     <Route exact path='/SelectCropSummaryPage3' component={SelectCropSummaryPage3}>
                     </Route>

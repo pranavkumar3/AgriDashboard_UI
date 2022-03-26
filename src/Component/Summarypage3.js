@@ -3,7 +3,7 @@ import {Chart} from "react-chartjs-2";
 import {withRouter} from "react-router-dom";
 import LoadingPage from "./LoadingPage";
 
-class SelectCropSummaryPage4 extends Component {
+class Summarypage3 extends Component {
 
     constructor(props) {
         super(props);
@@ -54,13 +54,13 @@ class SelectCropSummaryPage4 extends Component {
 
     handleButtonClick() {
         this.props.history.push({
-            pathname: '/',
+            pathname: '/SelectCropSummaryPage4',
         })
     }
 
     handleBackButton() {
         this.props.history.push({
-            pathname: '/Summarypage3',
+            pathname: '/SelectCropSummaryPage3',
             rainfallStatesForLineChart: this.state.rainfallStatesForLineChart,
             rainfall: this.state.rainfall,
             years: this.state.yearsForRainfall
@@ -94,7 +94,7 @@ class SelectCropSummaryPage4 extends Component {
                 }
             }
             new Chart(ctx, {
-                type: 'line',
+                type: 'pie',
                 data: {
                     labels: this.state.yearsForRainfall,
                     datasets: [
@@ -313,21 +313,14 @@ class SelectCropSummaryPage4 extends Component {
                         height="4%"
                     />
                 </div>
-                <div className="Graph">
-                    <canvas
-                        id={"LineChartForRainfall"}
-                        width="20%"
-                        height="4%"
-                    />
-                </div>
                 <h2 style={{textAlign: "center"}}>{this.state.requestedType} in {cropStates}</h2>
                 <div style={{textAlign: "center"}}>
                     <button className="registerButton" onClick={this.handleBackButton}>Back</button>
-                    <button className="registerButton" onClick={this.handleButtonClick}>Finish</button>
+                    <button className="registerButton" onClick={this.handleButtonClick}>Next</button>
                 </div>
             </div>
         )
     }
 }
 
-export default withRouter(SelectCropSummaryPage4)
+export default withRouter(Summarypage3)

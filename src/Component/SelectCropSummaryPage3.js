@@ -130,7 +130,7 @@ class SelectCropSummaryPage3 extends Component {
 
     handleButtonClick() {
         this.props.history.push({
-            pathname: '/SelectCropSummaryPage4',
+            pathname: '/Summarypage3',
             rainfallStatesForLineChart: this.state.rainfallStatesForLineChart,
             cropStatesForLineChart: this.state.cropStatesForLineChart,
             rainfall: this.state.rainfall,
