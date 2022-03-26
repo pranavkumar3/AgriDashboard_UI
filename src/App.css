@@ -105,7 +105,7 @@ nav ul li h3 {
     border-radius: 25px;
 }
 
-.LandingPage .main_content .Graph {
+.LandingPage .main_content .Graph .SummaryLineChart4 {
     padding: 20px;
     background: #fff;
     color: #717171;
@@ -114,17 +114,17 @@ nav ul li h3 {
     margin: 2%;
 }
 
-.LandingPage .main_content .Tables {
-    margin: 2%;
-    color: #717171;
-    line-height: 25px;
-}
-
 .SummaryLineChart {
     align-content: center;
     margin-top: 6%;
     margin-left: 20%;
     width: 80%;
+}
+
+.LandingPage .main_content .Tables {
+    margin: 2%;
+    color: #717171;
+    line-height: 25px;
 }
 
 .SummaryLineChart3 {
@@ -273,10 +273,6 @@ nav ul li h3 {
 
 .cropList select option {
     padding: 30px;
-}
-
-.SummaryGraph {
-    width: 80%;
 }
 
 .container {
