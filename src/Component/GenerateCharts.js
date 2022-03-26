@@ -197,7 +197,17 @@ class GenerateCharts extends Component {
                             label: this.state.statesForLineChart[2],
                             data: datasets[2],
                             borderColor: 'rgb(100,46,201)',
-                        }
+                        },
+                        {
+                            label: this.state.statesForLineChart[3],
+                            data: datasets[3],
+                            borderColor: 'rgb(75,145,192)',
+                        },
+                        {
+                            label: this.state.statesForLineChart[4],
+                            data: datasets[4],
+                            borderColor: 'rgb(135,75,192)',
+                        },
                     ],
                 },
                 options: {
@@ -234,7 +244,7 @@ class GenerateCharts extends Component {
         let presentYears = this.state.yearsForPieChart;
         if (presentYears.includes(id)) presentYears.splice(presentYears.indexOf(id), 1);
         else {
-            if (presentYears.length === 3) presentYears.shift();
+            if (presentYears.length === 5) presentYears.shift();
             presentYears.push(id);
         }
         this.setState({
@@ -248,7 +258,7 @@ class GenerateCharts extends Component {
         let presentStates = this.state.statesForLineChart;
         if (presentStates.includes(id)) presentStates.splice(presentStates.indexOf(id), 1);
         else {
-            if (presentStates.length === 3) presentStates.shift();
+            if (presentStates.length === 5) presentStates.shift();
             presentStates.push(id);
         }
         this.setState({

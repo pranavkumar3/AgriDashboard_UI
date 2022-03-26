@@ -165,25 +165,26 @@ class SummaryPage2 extends Component {
         states = states.substring(0, states.length - 2);
 
         return (
-            <div className="SummaryLineChart">
-                <h2 style={{marginBottom: "4%"}}>Summary</h2>
-                <h3 style={{marginBottom: "2%"}}>Choose Rainfall Chart</h3>
+            <div className="SummaryLineChart4">
+                <h2 style={{position: "absolute",left: "5%", marginTop: "2%", marginBottom: "2%"}}>Summary: Rainfall Chart</h2>
+                {/*<h3 style={{marginBottom: "2%"}}>Choose Rainfall Chart</h3>*/}
                 <div className="SummaryGraph">
                     <canvas
                         id={"LineChart"}
-                        width="15%"
+                        width="20%"
                         height="4%"
                     />
                 </div>
-                <div style={{position: "absolute", left: "20%"}}>
-                    <h2>Rainfall in {states}</h2>
 
+                <div style={{position: "absolute", left: "5%", marginTop: "2%"}}>
+                    <h2>Rainfall in {states}</h2>
                 </div>
 
                     <div style={{position: "absolute", left: "25%"}}>
                         <br></br>  <br></br>  <br></br>   <br></br>  <br></br>  <br></br>
-                <button className="registerButton" onClick={this.handleBackButton}>Back</button>
-                <button className="registerButton" onClick={this.handleButtonClick}>Next</button></div>
+                        <button className="registerButton" onClick={this.handleBackButton}>Back</button>
+                        <button className="registerButton" onClick={this.handleButtonClick}>Next</button>
+                    </div>
             </div>
         )
     }
