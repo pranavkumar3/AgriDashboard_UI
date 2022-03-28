@@ -162,12 +162,10 @@ tableRowStatesHandleClick(event) {
 
 // const handleClick = (geo) => {
 //     console.log("STATE: ",geo.id);
-//     <LandingPage selectedState={geo.id}/>
+//     // <LandingPage selectedState={geo.id}/>
 //     // setClickedCity(geo.properties.name);
 //     // dispatcher(getState({ value: geo.properties.name }));
-//     // history.push({
-//     //   pathname: "/issues",
-//     //   state: { states: geo.properties.name },
+
 //     // });
 //   };
 
@@ -177,20 +175,20 @@ function IndiaMap({...rest}) {
     const [state, setstate] = useState({data:""})
   
 
-    const func = (geo) => 
-    {
-        console.log(geo.id);
-    }
-    // const changeState = (geo) => {  
-    //     // var k=2;
-    //     // <LandingPage pl={2}/>
-    //     // setstate({data:`state/props of parent component 
-    //     // is send by onClick event to another component`}); 
-    //     setstate({data:`state/props of parent component 
-    //     is send by onClick event to another component`}); 
-    //     console.log(geo.id)
+    // const func = (geo) => 
+    // {
+    //     console.log(geo.id);
+    // }
+    const changeState = (geo) => {  
+        // var k=2;
+        // <LandingPage pl={2}/>
+        // setstate({data:`state/props of parent component 
+        // is send by onClick event to another component`}); 
+        setstate({data:`state/props of parent component 
+        is send by onClick event to another component`}); 
+        console.log("STATE: ",geo.id)
     
-    // }; 
+    }; 
     const [tooltipContent, setTooltipContent] = useState('');
     const [data, setData] = useState(getHeatMapData());
 
@@ -210,7 +208,7 @@ function IndiaMap({...rest}) {
     return (
         
         <div className="full-width-height container">
-            {/* <LandingPage data={state.data}/> */}
+            <LandingPage data={state.data}/>
 
 
             <h1 className="no-margin center">States and UTs</h1>
@@ -228,15 +226,13 @@ function IndiaMap({...rest}) {
                         geographies.map(geo => {
                             const current = data.find(s => s.id === geo.id);
 
-
                             return (//TODO
                             
                             <Geography
                             
                                     key={geo.rsmKey}
                                     geography={geo}
-                                    onClick={func(geo)}
-
+                                    onClick={() => changeState(geo)}
                                     // onClick={console.log("YO ",geo.id)}
                                     // onClick={changeState(geo)}
                                     fill={current ? colorScale(current.value) : DEFAULT_COLOR}

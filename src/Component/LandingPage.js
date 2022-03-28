@@ -109,7 +109,7 @@ class LandingPage extends Component {
 
     render() {
         // const { selectedState } = this.props.location
-        // {console.log(this.props.data)}
+        {console.log(this.props.data)}
         // console.log("SATE SELECTED IS:",selectedState)
         if (this.state.isLoading) {
             
