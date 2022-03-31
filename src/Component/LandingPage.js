@@ -124,7 +124,7 @@ class LandingPage extends Component {
             
             <div className="LandingPage">
 
-
+                {/* {console.log(this.props.data) } */}
                 <NavBar
                     toggleViewHandler={this.handleClickForToggleView}
                     // onClick={() =>   console.log(selectedState)}                    

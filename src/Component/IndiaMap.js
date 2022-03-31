@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { useCallback} from "react";
 import {ComposableMap, Geographies, Geography} from 'react-simple-maps';
 import {scaleQuantile} from 'd3-scale';
 import ReactTooltip from 'react-tooltip';
@@ -172,7 +173,7 @@ tableRowStatesHandleClick(event) {
 function IndiaMap({...rest}) {
 
 
-    const [state, setstate] = useState({data:""})
+    const [state, setstate] = useState({data: 0})
   
 
     // const func = (geo) => 
@@ -184,8 +185,7 @@ function IndiaMap({...rest}) {
         // <LandingPage pl={2}/>
         // setstate({data:`state/props of parent component 
         // is send by onClick event to another component`}); 
-        setstate({data:`state/props of parent component 
-        is send by onClick event to another component`}); 
+        setstate({data: geo.id}); 
         console.log("STATE: ",geo.id)
     
     }; 
@@ -208,12 +208,14 @@ function IndiaMap({...rest}) {
     return (
         
         <div className="full-width-height container">
-            <LandingPage data={state.data}/>
 
+                
+                
 
             <h1 className="no-margin center">States and UTs</h1>
 
-            <ReactTooltip>{tooltipContent}</ReactTooltip>
+            <ReactTooltip>{tooltipContent}
+            </ReactTooltip>
             <ComposableMap
                 projectionConfig={PROJECTION_CONFIG}
                 projection="geoMercator"
@@ -221,6 +223,7 @@ function IndiaMap({...rest}) {
                 height={220}
                 data-tip=""
             >
+                            
                 <Geographies geography={INDIA_TOPO_JSON}>
                     {({geographies}) =>
                         geographies.map(geo => {
@@ -244,10 +247,13 @@ function IndiaMap({...rest}) {
                     }
                 </Geographies>
             </ComposableMap>
+            
             <LinearGradient data={gradientData}/>
             <div className="center">
                 <button className="mt16">Change</button>
             </div>
+            <LandingPage data={state.data}/>
+
         </div>
     );
 }
